@@ -1,0 +1,120 @@
+import random
+
+def xiang(lst):
+    if lst == [0,0,0] :
+        DivinatorySymbol = 2  # 阳阳阳：乾卦
+        return DivinatorySymbol
+    elif lst == [0,0,1]:
+        DivinatorySymbol = 7  # 阳阳阴：巽卦
+        return DivinatorySymbol
+    elif lst == [0,1,0]:
+        DivinatorySymbol = 8  # 阳阴阳：离卦
+        return DivinatorySymbol
+    elif lst == [1,0,0]:
+        DivinatorySymbol = 9  # 阴阳阳：兑卦
+        return DivinatorySymbol
+    elif lst == [1,1,0]:
+        DivinatorySymbol = 3  # 阴阴阳：震卦
+        return DivinatorySymbol
+    elif lst == [1,0,1]:
+        DivinatorySymbol = 4  # 阴阳阴：坎卦
+        return DivinatorySymbol
+    elif lst == [0,1,1]:
+        DivinatorySymbol = 5  # 阳阴阴：艮卦
+        return DivinatorySymbol
+    elif lst == [1,1,1]:
+        DivinatorySymbol = 6  # 阴阴阴：坤卦
+        return DivinatorySymbol
+    # else:
+    #     DivinatorySymbol = -1 #错误
+    #     return DivinatorySymbol
+
+    # if lst[0] == 0:
+    #     if lst[1] == 0:
+    #         if lst[2] == 0:
+    #             DivinatorySymbol = 2   #阳阳阳：乾卦
+    #             return DivinatorySymbol
+    #         elif lst[2] == 1:
+    #             DivinatorySymbol = 7   #阳阳阴：巽卦
+    #             return DivinatorySymbol
+    #     elif lst[1] == 1: #01
+    #         if lst[2] == 0:   #  阳阴阳  离卦
+    #             DivinatorySymbol = 8
+    #             return DivinatorySymbol
+    #         elif lst[2]==1:
+    #             DivinatorySymbol = 5 # 阳阴阴 艮卦
+    #             return DivinatorySymbol
+    # else: # =1
+    #     if lst[1] == 0: #10
+    #         if lst[2] == 0:
+    #             DivinatorySymbol = 9   #100 兑卦
+    #             return DivinatorySymbol
+    #         else:
+    #             DivinatorySymbol =  4   #101 坎卦
+    #             return DivinatorySymbol
+    #     else: #11
+    #         if lst[2] == 0 :
+    #             DivinatorySymbol = 3    # 110 震卦
+    #             return DivinatorySymbol
+    #         else:
+    #             DivinatorySymbol = 6  #111坤卦
+    #             return DivinatorySymbol
+
+def zhong(Onl,Unl):
+
+# 2：乾卦  3：震卦  4：坎卦  5：艮卦 6：坤卦 7：巽卦 8：离卦 9：兑卦
+
+Onyao_list = []   #单个钱
+Ongua_list = []   #总的
+y = 0
+# for j in range(0,3):
+#     for i in range(3):
+#         yao = random.choice([0,1])   #0表示阳，1表示阴
+#         list1.insert(i,yao)
+#         print(yao)
+#     if list1[0] == list1[1] == list1[2] == 0:  #老阳变少阴
+#              list1[0] = 1
+#              list1[1] = 1
+#     elif list1[0] == list1[1] == list1[2] == 1:  #老阴变少阳
+#             list1[0] = 0
+#             list1[1] = 0
+#     y = list1[0] + list1[1] + list1[2]
+#
+#     if  y == 1:  #0+0+1:阴
+#             yao1 = 1
+#             list2.insert(j,yao1)
+#     elif y == 0:  #阳
+#             yao1 = 0
+#             list2.insert(j,yao1)
+for i in range(3):
+    yao = [random.randint(0,1) for j in range(3)]  #0是阳，1是阴
+    if yao == [0,0,0]: #老阳变少阴
+        yao = [0,0,1]
+    elif yao == [1,1,1]:  #老阴变少阳
+        yao = [1,1,0]
+
+    yao_sum = sum(yao)
+    if yao_sum == 2 :#阳
+        Ongua_list.append(0)
+    elif yao_sum == 1: #阴
+        Ongua_list.append(1)
+OnDive = xiang(Ongua_list)
+print(OnDive)
+
+Unyao_list = []   #单个钱
+Ungua_list = []   #总的
+for i in range(3):
+    yao = [random.randint(0,1) for j in range(3)]  #0是阳，1是阴
+    if yao == [0,0,0]: #老阳变少阴
+        yao = [0,0,1]
+    elif yao == [1,1,1]:  #老阴变少阳
+        yao = [1,1,0]
+
+    yao_sum = sum(yao)
+    if yao_sum == 2 :#阳
+        Ungua_list.append(0)
+    elif yao_sum == 1: #阴
+        Ungua_list.append(1)
+UnDive = xiang(Ungua_list)
+print(UnDive)
+
