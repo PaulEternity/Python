@@ -1,0 +1,253 @@
+import random
+
+def xiang(lst):
+    if lst == [0,0,0] :
+        DivinatorySymbol = 2  # 阳阳阳：乾卦
+        return DivinatorySymbol
+    elif lst == [0,0,1]:
+        DivinatorySymbol = 7  # 阳阳阴：巽卦
+        return DivinatorySymbol
+    elif lst == [0,1,0]:
+        DivinatorySymbol = 8  # 阳阴阳：离卦
+        return DivinatorySymbol
+    elif lst == [1,0,0]:
+        DivinatorySymbol = 9  # 阴阳阳：兑卦
+        return DivinatorySymbol
+    elif lst == [1,1,0]:
+        DivinatorySymbol = 3  # 阴阴阳：震卦
+        return DivinatorySymbol
+    elif lst == [1,0,1]:
+        DivinatorySymbol = 4  # 阴阳阴：坎卦
+        return DivinatorySymbol
+    elif lst == [0,1,1]:
+        DivinatorySymbol = 5  # 阳阴阴：艮卦
+        return DivinatorySymbol
+    elif lst == [1,1,1]:
+        DivinatorySymbol = 6  # 阴阴阴：坤卦
+        return DivinatorySymbol
+    # else:
+    #     DivinatorySymbol = -1 #错误
+    #     return DivinatorySymbol
+
+    # if lst[0] == 0:
+    #     if lst[1] == 0:
+    #         if lst[2] == 0:
+    #             DivinatorySymbol = 2   #阳阳阳：乾卦
+    #             return DivinatorySymbol
+    #         elif lst[2] == 1:
+    #             DivinatorySymbol = 7   #阳阳阴：巽卦
+    #             return DivinatorySymbol
+    #     elif lst[1] == 1: #01
+    #         if lst[2] == 0:   #  阳阴阳  离卦
+    #             DivinatorySymbol = 8
+    #             return DivinatorySymbol
+    #         elif lst[2]==1:
+    #             DivinatorySymbol = 5 # 阳阴阴 艮卦
+    #             return DivinatorySymbol
+    # else: # =1
+    #     if lst[1] == 0: #10
+    #         if lst[2] == 0:
+    #             DivinatorySymbol = 9   #100 兑卦
+    #             return DivinatorySymbol
+    #         else:
+    #             DivinatorySymbol =  4   #101 坎卦
+    #             return DivinatorySymbol
+    #     else: #11
+    #         if lst[2] == 0 :
+    #             DivinatorySymbol = 3    # 110 震卦
+    #             return DivinatorySymbol
+    #         else:
+    #             DivinatorySymbol = 6  #111坤卦
+    #             return DivinatorySymbol
+
+def zhong(Onl,Unl):
+    if Onl == 2 and Unl == 2 :
+        print("乾卦第一：乾为天")
+    elif Onl == 6 and Unl == 6:
+        print("坤卦第二：坤为地")
+    elif Onl == 4 and Unl == 3:
+        print("屯卦第三：水雷屯")
+    elif Onl == 5 and Unl == 4:
+        print("蒙卦第四：山水蒙")
+    elif Onl == 4 and Unl == 2:
+        print("需卦第五：水天需")
+    elif Onl == 2 and Unl == 4:
+        print("讼卦第六：水天讼")
+    elif Onl == 6 and Unl == 4:
+        print("师卦第七：地水师")
+    elif Onl == 4 and Unl == 6:
+        print("比卦第八：水地比")
+    elif Onl == 7 and Unl == 2:
+        print("小畜卦第九：风天小畜")
+    elif Onl == 2 and Unl == 9:
+        print("履卦第十：天泽履")
+    elif Onl == 6 and Unl == 2:
+        print("泰卦第十一：地天泰")
+    elif Onl == 2 and Unl == 6:
+        print("否卦第十二：天地否")
+    elif Onl == 2 and Unl == 8:
+        print("同人卦第十三：天火同人")
+    elif Onl == 8 and Unl == 2:
+        print("大有卦第十四：火天大有")
+    elif Onl == 6 and Unl == 5:
+        print("谦卦第十五：地山谦")
+    elif Onl == 3 and Unl == 6:
+        print("豫卦第十六：雷地豫")
+    elif Onl == 9 and Unl == 3:
+        print("随卦第十七：泽雷随")
+    elif Onl == 5 and Unl == 7:
+        print("蛊卦第十八：山风蛊")
+    elif Onl == 6 and Unl == 9:
+        print("临卦第十九：地泽临")
+    elif Onl == 7 and Unl == 6:
+        print("观卦第二十：风地观")
+    elif Onl == 8 and Unl == 3:
+        print("噬嗑卦第二十一：火雷噬嗑")
+    elif Onl == 5 and Unl == 8:
+        print("贲卦第二十二：山火贲")
+    elif Onl == 5 and Unl == 6:
+        print("剥卦第二十三：山地剥")
+    elif Onl == 6 and Unl == 3:
+        print("复卦第二十四：地雷复")
+    elif Onl == 2 and Unl == 3:
+        print("无妄卦第二十五：天雷无妄")
+    elif Onl == 5 and Unl == 2:
+        print("大畜卦第二十六：山天大畜")
+    elif Onl == 5 and Unl == 3:
+        print("颐卦第二十七：山雷颐")
+    elif Onl == 9 and Unl == 7:
+        print("大过卦第二十八：泽风大过")
+    elif Onl == 4 and Unl == 4:
+        print("坎卦第二十九：坎为水")
+    elif Onl == 8 and Unl == 8:
+        print("离卦第三十：离为火")
+    elif Onl == 9 and Unl == 5:
+        print("咸卦第三十一：泽山咸")
+    elif Onl == 3 and Unl == 7:
+        print("恒卦第三十二：雷风恒")
+    elif Onl == 2 and Unl == 5:
+        print("遁卦第三十三：天山遁")
+    elif Onl == 3 and Unl == 2:
+        print("大壮卦第三十四：雷天大壮")
+    elif Onl == 8 and Unl == 6:
+        print("晋卦第三十五：火地晋")
+    elif Onl == 6 and Unl == 8:
+        print("明夷卦第三十六：地火明夷")
+    elif Onl == 7 and Unl == 8:
+        print("家人卦第三十七：风火家人")
+    elif Onl == 8 and Unl == 9:
+        print("睽卦第三十八：火泽睽")
+    elif Onl == 4 and Unl == 5:
+        print("蹇卦第三十九：水山蹇")
+    elif Onl == 3 and Unl == 4:
+        print("解卦第四十：雷水解")
+    elif Onl == 5 and Unl == 9:
+        print("损卦第四十一：山泽损")
+    elif Onl == 7 and Unl == 3:
+        print("益卦第四十二：风雷益")
+    elif Onl == 9 and Unl == 2:
+        print("夬卦第四十三：泽天夬")
+    elif Onl == 2 and Unl == 7:
+        print("姤卦第四十四：天风姤")
+    elif Onl == 9 and Unl == 6:
+        print("萃卦第四十五：泽地萃")
+    elif Onl == 6 and Unl == 7:
+        print("升卦第四十六：地风升")
+    elif Onl == 9 and Unl == 4:
+        print("困卦第四十七：泽水困")
+    elif Onl == 4 and Unl == 7:
+        print("井卦第四十八：水风井")
+    elif Onl == 9 and Unl == 8:
+        print("革卦第四十九：泽火革")
+    elif Onl == 8 and Unl == 7:
+        print("鼎卦第五十：火风鼎")
+    elif Onl == 3 and Unl == 3:
+        print("震卦第五十一：震为雷")
+    elif Onl == 5 and Unl == 5:
+        print("艮卦第五十二：艮为山")
+    elif Onl == 7 and Unl == 5:
+        print("渐卦第五十三：风山渐")
+    elif Onl == 3 and Unl == 9:
+        print("归妹卦第五十四：雷泽归妹")
+    elif Onl == 3 and Unl == 8:
+        print("丰卦第五十五：雷火丰")
+    elif Onl == 8 and Unl == 5:
+        print("旅卦第五十六：火山旅")
+    elif Onl == 7 and Unl == 7:
+        print("巽卦第五十七：巽为风")
+    elif Onl == 9 and Unl == 9:
+        print("兑卦第五十八：兑为泽")
+    elif Onl == 7 and Unl == 4:
+        print("涣卦第五十九：风水涣")
+    elif Onl == 4 and Unl == 9:
+        print("节卦第六十：水泽节")
+    elif Onl == 7 and Unl == 9:
+        print("中孚卦第六十一：风泽中孚")
+    elif Onl == 3 and Unl == 5:
+        print("小过卦第六十二：雷山小过")
+    elif Onl == 4 and Unl == 8:
+        print("既济卦第六十四：水火既济")
+    elif Onl == 8 and Unl == 4:
+        print("未济卦第六十四：火水未济")
+    else:
+        print("error")
+
+
+# 2：乾卦  3：震卦  4：坎卦  5：艮卦 6：坤卦 7：巽卦 8：离卦 9：兑卦
+
+Onyao_list = []   #单个钱
+Ongua_list = []   #总的
+y = 0
+# for j in range(0,3):
+#     for i in range(3):
+#         yao = random.choice([0,1])   #0表示阳，1表示阴
+#         list1.insert(i,yao)
+#         print(yao)
+#     if list1[0] == list1[1] == list1[2] == 0:  #老阳变少阴
+#              list1[0] = 1
+#              list1[1] = 1
+#     elif list1[0] == list1[1] == list1[2] == 1:  #老阴变少阳
+#             list1[0] = 0
+#             list1[1] = 0
+#     y = list1[0] + list1[1] + list1[2]
+#
+#     if  y == 1:  #0+0+1:阴
+#             yao1 = 1
+#             list2.insert(j,yao1)
+#     elif y == 0:  #阳
+#             yao1 = 0
+#             list2.insert(j,yao1)
+for i in range(3):
+    yao = [random.randint(0,1) for j in range(3)]  #0是阳，1是阴
+    if yao == [0,0,0]: #老阳变少阴
+        yao = [0,0,1]
+    elif yao == [1,1,1]:  #老阴变少阳
+        yao = [1,1,0]
+
+    yao_sum = sum(yao)
+    if yao_sum == 2 :#阳
+        Ongua_list.append(0)
+    elif yao_sum == 1: #阴
+        Ongua_list.append(1)
+OnDive = xiang(Ongua_list)
+print(OnDive)
+
+Unyao_list = []   #单个钱
+Ungua_list = []   #总的
+for i in range(3):
+    yao = [random.randint(0,1) for j in range(3)]  #0是阳，1是阴
+    if yao == [0,0,0]: #老阳变少阴
+        yao = [0,0,1]
+    elif yao == [1,1,1]:  #老阴变少阳
+        yao = [1,1,0]
+
+    yao_sum = sum(yao)
+    if yao_sum == 2 :#阳
+        Ungua_list.append(0)
+    elif yao_sum == 1: #阴
+        Ungua_list.append(1)
+UnDive = xiang(Ungua_list)
+print(UnDive)
+
+zhong(OnDive,UnDive)
+
